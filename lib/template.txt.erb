@@ -1,0 +1,23 @@
+名言と愚行に関するウィキ
+===
+
+<%= @title %>
+---
+
+URL : <%= @url %>
+最終更新日: <%= @updated %>
+
+論者: <%= @author %>
+
+<%= @content %>
+
+
+### コメント
+
+<% @comments.each do |comment| %>
+<%= comment[:name] %>  <%= comment[:commented_at] %>
+
+<%= comment[:content] %>
+
+
+<% end %>
