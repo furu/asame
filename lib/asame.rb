@@ -38,7 +38,7 @@ module Asame
     URL = 'http://totutohoku.b23.coreserver.jp/totutohoku/index.php?plugin=ifrandom'
 
     def initialize(url = URL)
-      html = open(url).read.encode(Encoding::UTF_8, invalid: :replace)
+      html = open(url).read.encode(Encoding::UTF_8, invalid: :replace, undef: :replace)
       @doc = Nokogiri::HTML(html)
     end
 
