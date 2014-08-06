@@ -2,12 +2,17 @@ require 'nokogiri'
 require 'open-uri'
 require 'pony'
 require 'baby_erubis'
+require 'logger'
 
 require 'pry'
 require 'awesome_print'
 
 module Asame
   VERSION = '0.0.1'
+
+  def self.logger
+    @logger ||= Logger.new($stdout)
+  end
 
   def self.run
     Pony.options = {
@@ -32,6 +37,8 @@ module Asame
       to: ENV['MAIL_RECIPIENT'],
       body: template.render(source.to_h)
     )
+
+    logger.info("^o^ < OK! - #{source.url}")
   end
 
   class Source
