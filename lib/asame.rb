@@ -53,8 +53,6 @@ module Asame
       }
     end
 
-    private
-
     def title
       @doc.css('#header h1.title a').text
     end
