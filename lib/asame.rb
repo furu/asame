@@ -17,6 +17,7 @@ module Asame
   def self.run
     Pony.options = {
       charset: 'UTF-8',
+      from: 'noreply@asame.herokuapp.com',
       via: :smtp,
       via_options: {
         address:              ENV['SMTPD_ADDRESS'],
